@@ -1,0 +1,39 @@
+// Themify
+:root[data-theme="light"] {
+  --bgColor: #ededed;
+  --bgSecondaryColor: #fff;
+  --textColor: #000;
+  --textSecondaryColor: #fff;
+  --linkColor: #676b84;
+  --highlightColor: coral;
+  --menuBgColor: #fff;
+
+  --normalTextSize: 16px;
+  --mobileTextSize: 12px;
+  --headingTextSize: 2em;
+  --subheadingTextSize: 1.5em;
+}
+:root[data-theme="dark"] {
+  --bgColor: #242c34;
+  --bgSecondaryColor: #46525e;
+  --textColor: #c6c7c9;
+  --textSecondaryColor: #fff;
+  --linkColor: #61dafb;
+  --highlightColor: coral;
+  --menuBgColor: #46525e;
+
+  --normalTextSize: 16px;
+  --mobileTextSize: 12px;
+  --headingTextSize: 2em;
+  --subheadingTextSize: 1.5em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}

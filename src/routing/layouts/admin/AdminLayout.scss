@@ -1,0 +1,86 @@
+#admin-layout {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--bgColor);
+  font-size: var(--normalTextSize);
+  font-family: "Courier New", Courier, monospace;
+
+  #sidebar {
+    height: 100vh;
+    padding-bottom: 50px;
+    position: fixed;
+    width: 250px;
+    z-index: 999;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .site-title {
+      background-color: var(--bgSecondaryColor);
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: var(--headingTextSize);
+      height: 100px;
+      color: lightskyblue;
+    }
+
+    .links {
+      margin-top: 50px;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 20px;
+
+      .page-link {
+        font-size: var(--subheadingTextSize);
+        text-decoration: none;
+        color: var(--linkColor);
+        transition: 0.5s color;
+
+        &:hover,
+        &.active {
+          color: var(--highlightColor);
+        }
+
+        span {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  #content {
+    padding-left: 330px;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    color: var(--textColor);
+
+    .headbar,
+    .children {
+      background-color: var(--bgSecondaryColor);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .headbar {
+      height: 100px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      .page-title {
+        font-size: var(--headingTextSize);
+      }
+
+      #theme-toggler {
+        width: 100px;
+        margin-left: auto;
+      }
+    }
+
+    .children {
+      margin-top: 50px;
+    }
+  }
+}
