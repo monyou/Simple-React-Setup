@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ThemeToggler from "../../../components/theme-toggler/ThemeToggler";
-import { useThemes } from "../../../utils/common";
 import "./AdminLayout.scss";
 
 type AdminLayoutProps = {
@@ -9,8 +8,6 @@ type AdminLayoutProps = {
 };
 
 const AdminLayout = ({ children }: AdminLayoutProps): JSX.Element => {
-  useThemes();
-
   return (
     <div id="admin-layout">
       <div id="sidebar">

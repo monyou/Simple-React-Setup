@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import { useThemes } from "../../utils/common";
 import MainLayout from "../layouts/admin/AdminLayout";
 import MobileLayout from "../layouts/admin/MobileAdminLayout";
 import AppPage from "../../modules/app/pages/AppPage/AppPage";
@@ -21,6 +22,7 @@ const authenticatePage = (Layout: any, Component: any): JSX.Element | null => {
 };
 
 const AdminNavigation = (): JSX.Element => {
+  useThemes();
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 1000);
 
   useEffect(() => {

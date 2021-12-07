@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ThemeToggler from "../../../components/theme-toggler/ThemeToggler";
-import { useThemes } from "../../../utils/common";
 import "./MobileAdminLayout.scss";
 
 type MobileAdminLayoutProps = {
@@ -11,7 +10,6 @@ type MobileAdminLayoutProps = {
 const MobileAdminLayout = ({
   children,
 }: MobileAdminLayoutProps): JSX.Element => {
-  useThemes();
   const [menu, setMenu] = useState(false);
 
   return (
