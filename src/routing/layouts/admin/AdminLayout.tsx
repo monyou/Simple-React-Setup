@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import GlobalLoader from "../../../components/global-loader/GlobalLoader";
 import ThemeToggler from "../../../components/theme-toggler/ThemeToggler";
+import { useAppSelector } from "../../../redux/store";
 import "./AdminLayout.scss";
 
 type AdminLayoutProps = {
@@ -8,6 +10,8 @@ type AdminLayoutProps = {
 };
 
 const AdminLayout = ({ children }: AdminLayoutProps): JSX.Element => {
+  const pageTitle = useAppSelector((state) => state.global.pageTitle);
+
   return (
     <div id="admin-layout">
       <div id="sidebar">
@@ -26,11 +30,13 @@ const AdminLayout = ({ children }: AdminLayoutProps): JSX.Element => {
       </div>
       <div id="content">
         <div className="headbar">
-          <div className="page-title">Page Title</div>
+          <div className="page-title">{pageTitle}</div>
           <ThemeToggler />
         </div>
         <div className="children">{children}</div>
       </div>
+
+      <GlobalLoader />
     </div>
   );
 };

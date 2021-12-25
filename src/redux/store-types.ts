@@ -3,6 +3,7 @@ type Global = {
   theme: "light" | "dark";
   loading: boolean;
   error: string;
+  pageTitle: string;
 };
 
 export type ApplicationState = {

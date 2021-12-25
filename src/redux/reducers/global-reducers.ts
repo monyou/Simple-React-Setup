@@ -5,6 +5,7 @@ const initialState = {
   theme: "light",
   loading: false,
   error: null,
+  pageTitle: "Page Title",
 };
 
 export const name = (
@@ -55,11 +56,24 @@ export const error = (
   }
 };
 
+export const pageTitle = (
+  state = initialState.pageTitle,
+  action: { type: string; payload: string }
+) => {
+  switch (action.type) {
+    case actionTypes.SET_GLOBAL_PAGE_TITLE:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const globalReducers = {
   name,
   theme,
   loading,
   error,
+  pageTitle,
 };
 
 export default globalReducers;

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
-import { useThemes } from "../../utils/common";
+import { useIsMobileView, useThemes } from "../../utils/common";
 import MainLayout from "../layouts/admin/AdminLayout";
 import MobileLayout from "../layouts/admin/MobileAdminLayout";
 import AppPage from "../../modules/app/pages/AppPage/AppPage";
@@ -23,23 +23,7 @@ const authenticatePage = (Layout: any, Component: any): JSX.Element | null => {
 
 const AdminNavigation = (): JSX.Element => {
   useThemes();
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 1000);
-
-  useEffect(() => {
-    window.addEventListener("resize", switchThemes);
-
-    return () => {
-      window.removeEventListener("resize", switchThemes);
-    };
-  }, [isMobile]);
-
-  const switchThemes = (): void => {
-    if (window.innerWidth >= 1000) {
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-    }
-  };
+  const isMobile = useIsMobileView();
 
   const layout = !isMobile ? MainLayout : MobileLayout;
   return (

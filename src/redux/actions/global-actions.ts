@@ -16,11 +16,16 @@ export const setGlobalError = (error: string) => {
   return { type: actionTypes.SET_GLOBAL_ERROR, payload: error };
 };
 
+export const setGlobalPageTitle = (title: string) => {
+  return { type: actionTypes.SET_GLOBAL_PAGE_TITLE, payload: title };
+};
+
 const globalActions = {
   setGlobalName,
   setGlobalTheme,
   setGlobalLoading,
   setGlobalError,
+  setGlobalPageTitle,
 };
 
 export default globalActions;

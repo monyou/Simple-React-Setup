@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import GlobalLoader from "../../../components/global-loader/GlobalLoader";
 import ThemeToggler from "../../../components/theme-toggler/ThemeToggler";
 import "./MobileAdminLayout.scss";
 
@@ -42,6 +43,8 @@ const MobileAdminLayout = ({
           </div>
         </div>
       )}
+
+      <GlobalLoader />
     </div>
   );
 };
